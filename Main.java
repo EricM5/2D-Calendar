@@ -6,34 +6,32 @@ class Main {
 
     if (counter != 0) {
       for (int i = 1; i < day - 1; i++) {
-          System.out.print("\t\t");
+        System.out.print("\t\t");
       }
     }
-      for (int i = 0; i < calendardays.length; i++) {
-        
-        for (int j = 0; j < calendardays[i].length; j++) {
-          if (counter % 7 == 0) {
-            if (counter != 0)
-              System.out.println("");
-              System.out.print("" + calendardays[i][j]);
-              if (calendardays[i][j] == daysinmonth) {
-                System.out.println("");
-                break;
-              }
-                
-          }
-          else {
-            System.out.print("\t\t" + calendardays[i][j]);
-            if (calendardays[i][j] == daysinmonth) {
-              System.out.println("");
-              break;
-            }
-          }
-          counter++;
-          a++;
+    for (int i = 0; i < calendardays.length; i++) {
+      for (int j = 0; j < calendardays[i].length; j++) {
+        if (counter % 7 == 0) {
+          if (counter != 0)
+            System.out.println("");
+            System.out.print("" + calendardays[i][j]);
+          if (calendardays[i][j] == daysinmonth) {
+            System.out.println("");
+            break;
+          }  
         }
+        else {
+          System.out.print("\t\t" + calendardays[i][j]);
+          if (calendardays[i][j] == daysinmonth) {
+            System.out.println("");
+            break;
+          }
+        }
+        counter++;
+        a++;
       }
-      System.out.println("");
+    }
+    System.out.println("");
   }
   /*
   NEW METHOD
@@ -53,24 +51,24 @@ class Main {
       while(true) { //loop to check for valid day
         System.out.print("Enter the day: ");
         day = in.nextInt();
-          if (day > 7 || day == 0) {
-            System.out.print("Invalid day, try again.\n\n");
-          } else {
-              break;
-          }
+        if (day > 7 || day == 0) {
+          System.out.print("Invalid day, try again.\n\n");
+        } else {
+          break;
+        }
       }
       while (true) { //loop to check for valid days in month
         System.out.print("Enter the number of days in the month: ");
         daysinmonth = in.nextInt();
         if (daysinmonth <= 31 && daysinmonth > 28) {
           break;
-          }
+        }
         if (daysinmonth == 28)
           break;
-          System.out.print("Invalid number of days in month, try again.\n\n");
-        }
-        System.out.println("\nSun\t\tMon\t\tTue\t\tWed\t\tThu\t\tFri\t\tSat");
-        calendar(day, daysinmonth , calendardays);
+        System.out.print("Invalid number of days in month, try again.\n\n");
+      }
+      System.out.println("\nSun\t\tMon\t\tTue\t\tWed\t\tThu\t\tFri\t\tSat");
+      calendar(day, daysinmonth , calendardays);
     }
   }
 } 
